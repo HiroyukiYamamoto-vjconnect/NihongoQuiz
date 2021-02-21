@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">NihongoQuiz</string>
+
+    <!-- スタート画面 -->
+    <string name="start_title">県庁所在地クイズ</string>
+    <string name="start_msg">クイズのカテゴリを選択してください</string>
+    <string name="btn_start">クイズを始める</string>
+    <string name="btn_show_score">スコアを見る</string>
+    <string-array name="quiz_category">
+        <item>全て</item>
+        <item>北海道・東北</item>
+        <item>関東</item>
+        <item>中部</item>
+        <item>近畿</item>
+        <item>中国・四国</item>
+        <item>九州</item>
+    </string-array>
+
+    <!-- クイズ画面 -->
+    <string name="question_label">問題文</string>
+    <string name="count_label">Q%d</string>
+    <string name="answer_btn">選択肢</string>
+
+    <!-- 結果画面 -->
+    <string name="result_title">結果</string>
+    <string name="result_score">%d / 5</string>
+    <string name="rexult_total_score">トータルスコア : %d</string>
+    <string name="btn_return">もどる</string>
+
+    <!-- スコア画面 -->
+    <string name="score_title">スコア</string>
+    <string name="score_total_score">%d</string>
+    <string name="btn_submit_score">スコアを送信</string>
+    <string name="btn_show_leaderboard">ランキングを表示</string>
+    <string name="btn_show_achievements">実績を表示</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="btn_sign_in">Sign In</string>
+
+    <!-- AdMob 広告 -->
+    <!-- テスト用 -->
+    <!-- <string name="admob_id">ca-app-pub-3940256099942544~3347511713</string> -->
+    <!-- <string name="admob_banner_unit_id">ca-app-pub-3940256099942544/6300978111</string> -->
+    <!-- <string name="admob_interstitial_unit_id">ca-app-pub-3940256099942544/1033173712</string> -->
+    <!-- 本番用 -->
+    <string name="admob_id">ca-app-pub-9031956712953361~5376754454</string>
+    <string name="admob_banner_unit_id">ca-app-pub-9031956712953361/2750591114</string>
+    <string name="admob_interstitial_unit_id">ca-app-pub-9031956712953361/6008499218</string>
+</resources>

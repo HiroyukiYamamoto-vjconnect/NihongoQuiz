@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScoreActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:id="@+id/rootLayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_title"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/totalScoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_total_score"
+        android:textSize="24sp"
+        android:layout_marginTop="60dp"/>
+
+    <Button
+        android:id="@+id/submitScoreBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_submit_score"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_marginTop="60dp"/>
+
+    <Button
+        android:id="@+id/showLeaderBoardBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_show_leaderboard"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/showAchievementsBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_show_achievements"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/signOutBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_sign_out"
+            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.Button"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/signInBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_sign_in"
+            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.Button"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>
