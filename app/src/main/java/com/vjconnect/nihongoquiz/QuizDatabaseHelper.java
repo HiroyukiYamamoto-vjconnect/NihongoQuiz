@@ -11,7 +11,44 @@ public class QuizDatabaseHelper extends SQLiteOpenHelper {
     static final private int VERSION = 001;
 
     String[][] quizData = {
-            // {"都道府県名", "正解", "選択肢１", "選択肢２", "選択肢３", "カテゴリー"}
+            // {"日本語", "正解", "選択肢１", "選択肢２", "選択肢３", "カテゴリー"}
+            {"朝", "asa","Buổi sáng","Bạn bè","Nghỉ","Tình yêu","1"},
+            {"家", "ie","Nhà","Điện","Tuần sau","Tình yêu, tình thương","1"},
+            {"エアコン", "eakon","Máy điều hòa","Bà","Nghỉ","Ý tưởng","1"},
+            {"お母さん", "okasan","Mẹ","Tuần trước","Anh trai","Bắt tay","1"},
+            {"外国", "gaikoku","Nước ngoài","Tai nạn, sự cố","Con chó","Truy cập","1"},
+            {"季節", "kisetsu","Mùa","Buổi chiều","Sinh viên, học sinh","Trọng âm","1"},
+            {"空港", "kuko","Sân bay","Giày","Lớp học","Khắp nơi, đây đó ","1"},
+            {"元気", "genki","Khoẻ mạnh","Lớp học","Giày","Thu thập","1"},
+            {"高校", "koko","Trường trung học phổ thông","Sinh viên, học sinh","Buổi chiều","Địa chỉ","1"},
+            {"魚", "sakana","Cá","Tiền bạc","Tai nạn, sự cố","Dọn dẹp","1"},
+            {"時間", "jikan","Thời gian","Ga tàu, nhà ga","Tuần trước","Lời khuyên","1"},
+            {"スーパー", "supa","Siêu thị","Con chó","Bà","Hố, hang, lỗ hỏng","1"},
+            {"席", "seki","Ghế","Anh trai","Điện","Phần dư, phần còn lại","1"},
+            {"外", "soto","Ở ngoài","Bố mẹ","Bạn bè","Bảng câu hỏi","1"},
+            {"大学", "daigaku","Trường đại học","Tuần sau","Buổi sáng","Tinh nghịch, nghịch ngợm","1"},
+            {"お父さん", "otosan","Bố","Nghỉ","Nhà","Việc nhà, việc nội trợ","1"},
+            {"テレビ", "televi","Ti vi","E-mail","Máy điều hòa","Cho vay","1"},
+            {"メール", "meru","E-mail","Ti vi","Mẹ","Con số","1"},
+            {"休み", "yasumi","Nghỉ","Bố","Nước ngoài","Một hướng, một bên","1"},
+            {"来週", "raishu","Tuần sau","Bố","Mùa","Danh mục, Catalog","1"},
+            {"両親", "ryosin","Bố mẹ","Trường đại học","Sân bay","Giá trị","1"},
+            {"兄", "ani","Anh trai","Ở ngoài","Khoẻ mạnh","Cắt","1"},
+            {"犬", "inu","Con chó","Ghế","Trường trung học phổ thông","Hoạt động","1"},
+            {"駅", "eki","Ga tàu, nhà ga","Siêu thị","Cá","Nhẫn nhịn, chịu đựng","1"},
+            {"お金", "okane","Tiền bạc","Thời gian","Chúa Trời","Tình yêu","1"},
+            {"学生", "gakusei","Sinh viên, học sinh","Bầu trời","Ý tưởng","Bắt tay","1"},
+            {"教室", "kyoshitsu","Lớp học","Trường trung học phổ thông","Truy cập","Địa chỉ","1"},
+            {"靴", "kutsu","Giày","Khoẻ mạnh","Thời gian","Chào mừng, nghênh đón","1"},
+            {"午後", "gogo","Buổi chiều","Sân bay","Siêu thị","Du lịch","1"},
+            {"事故", "jiko","Tai nạn, sự cố","Mùa","Ghế","Bạn bè","1"},
+            {"先週", "sensyu","Tuần trước","Nước ngoài","Ở ngoài","Điện","1"},
+            {"祖母", "sobo","Bà","Mẹ","Trường đại học","Tai nạn, sự cố", "1"},
+            {"電気", "denki","Điện","Máy điều hòa","Bố","Giày","1"},
+            {"友達", "tomodachi","Bạn bè","Nhà","Ti vi","Anh trai","1"},
+
+
+            /*
             {"北海道", "札幌市", "長崎市", "福島市", "前橋市", "1"},
             {"青森県", "青森市", "広島市", "甲府市", "岡山市", "1"},
             {"岩手県", "盛岡市","大分市", "秋田市", "福岡市", "1"},
@@ -59,6 +96,8 @@ public class QuizDatabaseHelper extends SQLiteOpenHelper {
             {"宮崎県", "宮崎市", "札幌市", "新潟市", "奈良市", "6"},
             {"鹿児島県", "鹿児島県", "和歌山市", "神戸市", "名古屋市", "6"},
             {"沖縄県", "那覇市", "熊本市", "高知市", "大津市", "6"}
+
+             */
     };
 
 
@@ -70,7 +109,7 @@ public class QuizDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // テーブルを作成
         db.execSQL("CREATE TABLE quiz (" +
-                "question TEXT PRIMARY KEY, answer TXT, choice1 TEXT," +
+                "question TEXT PRIMARY KEY, alphabet TXT, answer TXT, choice1 TEXT," +
                 "choice2 TXT, choice3 TXT, category TXT)");
 
         // トランザクション開始
@@ -78,20 +117,21 @@ public class QuizDatabaseHelper extends SQLiteOpenHelper {
         try {
             // SQLを準備
             SQLiteStatement sql = db.compileStatement(
-                    "INSERT INTO quiz (question, answer, choice1, choice2, choice3, category)" +
-                            "VALUES(?, ?, ?, ?, ?, ?)"
+                    "INSERT INTO quiz (question, alphabet, answer, choice1, choice2, choice3, category)" +
+                            "VALUES(?, ?, ?, ?, ?, ?, ?)"
             );
 
             // クイズにデータを一行ずつ追加する
             for (int i=0; i < quizData.length; i++) {
                 // Valueをセット
                 // bindString(index, value)
-                sql.bindString(1, quizData[i][0]); // 都道府県名
-                sql.bindString(2, quizData[i][1]); // 正解
-                sql.bindString(3, quizData[i][2]); // 選択肢１
-                sql.bindString(4, quizData[i][3]); // 選択肢２
-                sql.bindString(5, quizData[i][4]); // 選択肢３
-                sql.bindString(6, quizData[i][5]); // カテゴリ
+                sql.bindString(1, quizData[i][0]); // 日本語
+                sql.bindString(2, quizData[i][1]); // アルファベット
+                sql.bindString(3, quizData[i][2]); // 正解
+                sql.bindString(4, quizData[i][3]); // 選択肢１
+                sql.bindString(5, quizData[i][4]); // 選択肢２
+                sql.bindString(6, quizData[i][5]); // 選択肢３
+                sql.bindString(7, quizData[i][6]); // カテゴリ
 
                 sql.executeInsert();
             }

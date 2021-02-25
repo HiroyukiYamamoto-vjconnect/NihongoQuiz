@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView countLabel;
     private TextView questionLabel;
+    private TextView alphabetLabel;
     private Button answerBtn1;
     private Button answerBtn2;
     private Button answerBtn3;
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         countLabel = findViewById(R.id.countLabel);
         questionLabel = findViewById(R.id.questionLabel);
+        alphabetLabel = findViewById(R.id.alphabetLabel);
         answerBtn1 = findViewById(R.id.answerBtn1);
         answerBtn2 = findViewById(R.id.answerBtn2);
         answerBtn3 = findViewById(R.id.answerBtn3);
@@ -105,11 +107,12 @@ public class MainActivity extends AppCompatActivity {
             // quizArrayを作成
             while (cursor.moveToNext()) {
                 ArrayList<String> tmpArray = new ArrayList<>();
-                tmpArray.add(cursor.getString(0)); // 都道府県名
-                tmpArray.add(cursor.getString(1)); // 正解
-                tmpArray.add(cursor.getString(2)); // 選択肢1
-                tmpArray.add(cursor.getString(3)); // 選択肢2
-                tmpArray.add(cursor.getString(4)); // 選択肢3
+                tmpArray.add(cursor.getString(0)); // 日本語名
+                tmpArray.add(cursor.getString(1)); // アルファベット
+                tmpArray.add(cursor.getString(2)); // 正解
+                tmpArray.add(cursor.getString(3)); // 選択肢1
+                tmpArray.add(cursor.getString(4)); // 選択肢2
+                tmpArray.add(cursor.getString(5)); // 選択肢3
                 quizArray.add(tmpArray);
             }
         } finally {
@@ -165,11 +168,14 @@ public class MainActivity extends AppCompatActivity {
         // randomNumを使って、quizArrayからクイズを一つ取り出す
         ArrayList<String> quiz = quizArray.get(randomNum);
 
-        // 問題文(都道府県名)を表示
+        // 問題文(日本語)を表示
         questionLabel.setText(quiz.get(0));
 
+        // 問題文のアルファベットを表示
+        alphabetLabel.setText(quiz.get(1));
+
         // 正解をrightAnswerにセット
-        rightAnswer = quiz.get(1);
+        rightAnswer = quiz.get(2);
 
         // クイズ配列から問題文(都道府県名)を削除
         quiz.remove(0);
@@ -178,10 +184,10 @@ public class MainActivity extends AppCompatActivity {
         Collections.shuffle(quiz);
 
         // 解答ボタンに正解と選択肢3つを表示
-        answerBtn1.setText(quiz.get(0));
-        answerBtn2.setText(quiz.get(1));
-        answerBtn3.setText(quiz.get(2));
-        answerBtn4.setText(quiz.get(3));
+        answerBtn1.setText(quiz.get(1));
+        answerBtn2.setText(quiz.get(2));
+        answerBtn3.setText(quiz.get(3));
+        answerBtn4.setText(quiz.get(4));
 
         // このクイズをquizArrayから削除
         quizArray.remove(randomNum);

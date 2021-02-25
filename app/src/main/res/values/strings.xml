@@ -7,17 +7,17 @@
     <string name="btn_start">クイズを始める</string>
     <string name="btn_show_score">スコアを見る</string>
     <string-array name="quiz_category">
-        <item>全て</item>
-        <item>北海道・東北</item>
-        <item>関東</item>
-        <item>中部</item>
-        <item>近畿</item>
-        <item>中国・四国</item>
-        <item>九州</item>
+        <item>All</item>
+        <item> N5-N4</item>
+        <item>N3</item>
+        <item>N2</item>
+        <item>N1</item>
     </string-array>
 
     <!-- クイズ画面 -->
     <string name="question_label">問題文</string>
+    <string name="alphabet_Label">アルファベット</string>
+"
     <string name="count_label">Q%d</string>
     <string name="answer_btn">選択肢</string>
 
