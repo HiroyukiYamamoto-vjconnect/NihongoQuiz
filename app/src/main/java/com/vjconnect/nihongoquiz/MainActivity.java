@@ -184,10 +184,10 @@ public class MainActivity extends AppCompatActivity {
         Collections.shuffle(quiz);
 
         // 解答ボタンに正解と選択肢3つを表示
-        answerBtn1.setText(quiz.get(1));
-        answerBtn2.setText(quiz.get(2));
-        answerBtn3.setText(quiz.get(3));
-        answerBtn4.setText(quiz.get(4));
+        answerBtn1.setText(quiz.get(0));
+        answerBtn2.setText(quiz.get(1));
+        answerBtn3.setText(quiz.get(2));
+        answerBtn4.setText(quiz.get(3));
 
         // このクイズをquizArrayから削除
         quizArray.remove(randomNum);
