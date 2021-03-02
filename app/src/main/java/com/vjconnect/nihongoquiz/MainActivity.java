@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private String rightAnswer;
     private int rightAnswerCount;
     private int quizCount = 1;
-    static private final int QUIZ_COUNT = 5;
+    static private final int QUIZ_COUNT = 10;
 
     ArrayList<ArrayList<String>> quizArray = new ArrayList<>();
     private SoundPlayer soundPlayer = null;
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         // StartActivityからクイズカテゴリを取得
         int quizCategory = getIntent().getIntExtra("QUIZ_CATEGORY", 0);
-        //Log.v("QUIZ_CATEGORY", quizCategory + "");
+        Log.v("QUIZ_CATEGORY", quizCategory + "");
 
         QuizDatabaseHelper dbHelper = new QuizDatabaseHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -113,6 +113,12 @@ public class MainActivity extends AppCompatActivity {
                 tmpArray.add(cursor.getString(3)); // 選択肢1
                 tmpArray.add(cursor.getString(4)); // 選択肢2
                 tmpArray.add(cursor.getString(5)); // 選択肢3
+                Log.v("Yamama", "cursor.getString(0)" + cursor.getString(0));
+                Log.v("Yamama", "cursor.getString(1)" + cursor.getString(1));
+                Log.v("Yamama", "cursor.getString(2)" + cursor.getString(2));
+                Log.v("Yamama", "cursor.getString(3)" + cursor.getString(3));
+                Log.v("Yamama", "cursor.getString(4)" + cursor.getString(4));
+                Log.v("Yamama", "cursor.getString(5)" + cursor.getString(5));
                 quizArray.add(tmpArray);
             }
         } finally {
@@ -178,6 +184,8 @@ public class MainActivity extends AppCompatActivity {
         rightAnswer = quiz.get(2);
 
         // クイズ配列から問題文(都道府県名)を削除
+        quiz.remove(0);
+        // クイズ配列からアルファベットを削除
         quiz.remove(0);
 
         // 正解と選択肢3つをシャッフル
