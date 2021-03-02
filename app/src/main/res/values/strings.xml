@@ -2,10 +2,15 @@
     <string name="app_name">NihongoQuiz</string>
 
     <!-- スタート画面 -->
-    <string name="start_title">県庁所在地クイズ</string>
-    <string name="start_msg">クイズのカテゴリを選択してください</string>
-    <string name="btn_start">クイズを始める</string>
-    <string name="btn_show_score">スコアを見る</string>
+    <string name="start_title">VJ Quiz</string>
+    <!-- 日本語 -->
+    <!-- <string name="start_msg">クイズのカテゴリを選択してください</string> -->
+    <!-- <string name="btn_start">クイズを始める</string> -->
+    <!-- <string name="btn_show_score">スコアを見る</string> -->
+    <!-- ベトナム語 -->
+    <string name="start_msg">Vui lòng chọn thể loại câu đố</string>
+    <string name="btn_start">Bắt đầu chơi </string>
+    <string name="btn_show_score">Xem điểm</string>
     <string-array name="quiz_category">
         <item>All</item>
         <item> N5-N4</item>
@@ -22,19 +27,30 @@
     <string name="answer_btn">選択肢</string>
 
     <!-- 結果画面 -->
-    <string name="result_title">結果</string>
-    <string name="result_score">%d / 5</string>
-    <string name="rexult_total_score">トータルスコア : %d</string>
-    <string name="btn_return">もどる</string>
+    <!-- 日本語 -->
+    <!-- <string name="result_title">結果</string> -->
+    <string name="result_score">%d / 10</string>
+    <!-- <string name="rexult_total_score">トータルスコア : %d</string> -->
+    <!-- <string name="btn_return">もどる</string> -->
+    <!-- ベトナム語 -->
+    <string name="result_title">Kết quả</string>
+    <string name="rexult_total_score">Tổng điểm : %d</string>
+    <string name="btn_return">Trở về</string>
 
     <!-- スコア画面 -->
-    <string name="score_title">スコア</string>
+    <!-- 日本語 -->
+    <!-- <string name="score_title">スコア</string> -->
     <string name="score_total_score">%d</string>
-    <string name="btn_submit_score">スコアを送信</string>
-    <string name="btn_show_leaderboard">ランキングを表示</string>
-    <string name="btn_show_achievements">実績を表示</string>
+    <!-- <string name="btn_submit_score">スコアを送信</string> -->
+    <!-- <string name="btn_show_leaderboard">ランキングを表示</string> -->
+    <!-- <string name="btn_show_achievements">実績を表示</string> -->
     <string name="btn_sign_out">Sign Out</string>
     <string name="btn_sign_in">Sign In</string>
+    <!-- ベトナム語 -->
+    <string name="score_title">Điểm</string>
+    <string name="btn_submit_score">Gửi điểm</string>
+    <string name="btn_show_leaderboard">Hiển thị xếp hạng</string>
+    <string name="btn_show_achievements">Xem thành tích</string>
 
     <!-- AdMob 広告 -->
     <!-- テスト用 -->
